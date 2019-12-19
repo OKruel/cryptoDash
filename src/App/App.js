@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
-import WelcomeMsg from './WelcomeMsg';
+import Settings from '../Settings/index';
+import Content from '../Shared/Content';
 import AppLayout from './AppLayout';
 import AppBar from './AppBar';
-// import { AppProvider } from './Context/AppProvider';
-// import styled, { css } from 'styled-components';
+import { AppProvider } from './AppProvider';
 
 class App extends Component {
   render() {
     return (
       <AppLayout>
-        <AppBar/>
-        {/* <AppProvider> */}
-        <WelcomeMsg />
-        {/* </AppProvider> */}
+        <AppProvider>
+          <AppBar />
+          <Content>
+            <Settings />
+          </Content>
+        </AppProvider>
       </AppLayout>
     );
   }
